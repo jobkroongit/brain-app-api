@@ -1,5 +1,5 @@
-#SmartBrain-api - Final
-##Final project for ZTM course
+# SmartBrain-api - Final
+## Final project for ZTM course
 
 Clone this repo
 Run `npm install`
