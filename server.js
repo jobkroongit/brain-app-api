@@ -9,9 +9,12 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+const http = require('http');
+
 require('dotenv').config();
 // Use process.env.PORT to get the port number
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
+
 
 const db = knex({
   client: 'pg',
@@ -38,7 +41,5 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 app.post('/imageUrl', (req, res) => { image.handleApiCall(req, res);})
 
 app.listen(PORT, () => {
-  console.log(`app is running on port ${PORT}`);
+  console.log(`app is running on port ${process.env.PORT}`);
 });
-
-console.log(PORT)
